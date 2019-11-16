@@ -1,8 +1,20 @@
 {%extends 'base.html'%}
 
 {%block content%}
-<h1>{{id}}</h1>
-{%for article in articles%}
-<h2>{{article.title}}</h2>
-{%endfor%}
+<div class="container-fluid" style="background-color: rgb(168, 168, 173);">
+<div style="text-align:center">
+    <h1>{{id|upper|replace("-"," ")}}</h1>
+</div>
+    <div class="container">
+            {%for article in articles%}
+        <div class="card" style="width:300px;height:400px;float:left;background-color:aliceblue;margin:2%;text-align: center;">
+            <div class="card-body">
+                <img src='{{article.urlToImage}}' style="width:200px;height:200px;padding-top: 2%;">
+                <h2>{{article.title}}</h2>
+                <a href="{{article.url}}" target="_blank_" class="btn btn-success">read more</a>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</div>
 {%endblock%}
