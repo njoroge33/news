@@ -1,4 +1,15 @@
-{% for source in sources %}
-<h1>{{source.name}}</h1>
-{% endfor %}
+{% extends 'base.html' %}
 
+{% block content %}
+{% for source in sources %}
+<div class="container-fluid" style="background-color: rgb(162, 162, 163)">
+    <div class="container">
+        <div class="card" style="height:200px;background-color:#f7f0f3;">
+            <div class="card-body" style="padding-left:5%;">
+                <h1>{{source.name}}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+    {% endfor %}
+    {% endblock %}
