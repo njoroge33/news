@@ -6,15 +6,23 @@
     <h1>{{id|upper|replace("-"," ")}}</h1>
 </div>
     <div class="container">
+        {%if articles%}
             {%for article in articles%}
-        <div class="card" style="width:300px;height:400px;float:left;background-color:aliceblue;margin:2%;text-align: center;">
-            <div class="card-body">
-                <img src='{{article.urlToImage}}' style="width:200px;height:200px;padding-top: 2%;">
+        <div class="card" style="width:350px;height:600px;float:left;background-color:aliceblue;margin:1%;text-align: center;">
+            <div class="card-body" title="{{article.description}}">
+                <img src='{{article.urlToImage}}' alt="{{article.description}}"style="width:200px;height:200px;padding-top: 2%;">
                 <h2>{{article.title}}</h2>
+                {%if article.author%}
+                <p>published by: {{article.author}}</p>
+                {%endif%}
+                <p>published: <em>{{article.publishedAt}}</em></p>
                 <a href="{{article.url}}" target="_blank_" class="btn btn-success">read more</a>
             </div>
         </div>
         {%endfor%}
+        {%else%}
+        <h1 style="background-color:red;">OOPS!!NO ARTICLES TO DISPLAY AT THE MOMENT</h1>
+        {%endif%}
     </div>
 </div>
 {%endblock%}

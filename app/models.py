@@ -1,3 +1,5 @@
+import arrow
+
 class Source:
     '''
     Source class to define Source Objects
@@ -21,4 +23,4 @@ class Article:
         self.description = description
         self.url = url
         self.urlToImage = urlToImage
-        self.publishedAt = publishedAt
+        self.publishedAt = arrow.get(publishedAt).humanize()
