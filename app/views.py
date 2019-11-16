@@ -6,3 +6,5 @@ from .request import get_sources
 def index():
     sources = get_sources()
     return render_template('index.html', sources = sources)
+
+@app.route('/articles/')
