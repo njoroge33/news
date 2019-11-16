@@ -22,3 +22,21 @@ def process_sources(sources_list):
                         source['url'], source['category'], source['language'], source['country'])
         sources.append(source)
     return sources
+
+def get_articles(source_id):
+    url = f'https://newsapi.org/v2/everything?sources={source_id}&apiKey={api_key}'
+    url_datas = requests.get(url)
+    article_dict = url_datas.json()
+    articles_list = article_dict['articles']
+
+    return process_articles(articles_list)
+
+def process_articles(articles_list):
+    '''
+    Function  that processes the sources result and transform them to a list of Objects according to objects
+    '''
+    articles = []
+    for article in articles_list:
+        article = Article(article['author'], article['title'], article['description'], article['url'], article['urlToImage'], article['publishedAt'])
+        articles.append(article)
+    return articles
