@@ -1,12 +1,5 @@
 {% extends 'base.html' %}
 
-{% block styles%}
-{{ super() }}
-<link rel="stylesheet" href="{{ url_for('static', filename= 'css/index.css') }}">
-<!-- <link href="https://fonts.googleapis.com/css?family=Arima+Madurai&display=swap" rel="stylesheet"> -->
-{% endblock %}
-
-
 {% block content %}
 {% for source in sources %}
 <div class="container-fluid" style="background-color: rgb(189, 189, 194)">
