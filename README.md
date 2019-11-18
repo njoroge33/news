@@ -1,4 +1,4 @@
-# Newshighlight
+# news
 An application that will help users to list and preview news articles from various sources.   
 
 ## Built By [John Gichuhi](https://github.com/njoroge33/)
@@ -25,7 +25,7 @@ As a user I would like to:
 | Display articles from a news source | **Click on view articles on a news source** | Redirected to a page with a list of articles from the source |
 | Display the preview of an article | **On page load** | Each article displays an image, title, description and publication date |
 | Read an entire article | **Click Read Article** | Redirected to the news source's site to read the entire article |
-| Go back to news sources | **Click on Newshighlight** | Redirected to the news source list |
+| Go back to news sources | **Click on news** | Redirected to the news source list |
 ## SetUp / Installation Requirements
 ### Prerequisites
 * python3.6
