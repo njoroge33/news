@@ -2,21 +2,27 @@
 
 {%block content%}
 <div class="container-fluid" style="background-color: rgb(168, 168, 173);">
-<div style="text-align:center">
-    <h1>{{id|upper|replace("-"," ")}}</h1>
-</div>
+    <div style="text-align:center">
+        <h1 style="font-weight: bold;">{{id|upper|replace("-"," ")}}</h1>
+    </div>
     <div class="container">
         {%if articles%}
-            {%for article in articles%}
-        <div class="card" style="width:350px;height:600px;float:left;background-color:aliceblue;margin:1%;text-align: center;">
+        {%for article in articles%}
+        <div class="card"
+            style="width:350px;height:600px;float:left;background-color:aliceblue;margin:1%;text-align: center;">
             <div class="card-body" title="{{article.description}}">
-                <img src='{{article.urlToImage}}' alt="{{article.description}}"style="width:200px;height:200px;padding-top: 2%;">
-                <h2>{{article.title}}</h2>
+                {%if article.urlToImage == 'null'%}
+                <p></p>
+                {%else%}
+                <img src='{{article.urlToImage}}' alt="" style="width:200px;height:200px;padding-top: 2%;">
+                {%endif%}
+                <h2 style="font-weight: bold;">{{article.title}}</h2>
                 {%if article.author%}
                 <p>published by: {{article.author}}</p>
                 {%endif%}
                 <p>published: <em>{{article.publishedAt}}</em></p>
-                <a href="{{article.url}}" target="_blank_" class="btn btn-success">read more</a>
+                <a href="{{article.url}}" target="_blank_" class="btn btn-success"
+                    style="font-weight: bold;font-size: 23px;">read more</a>
             </div>
         </div>
         {%endfor%}
